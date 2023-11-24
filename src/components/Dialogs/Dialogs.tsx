@@ -3,20 +3,22 @@ import s from './Dialogs.module.css';
 import DialogsItem from './dialogItem/DialogItem';
 import Messages from './messages/Messages';
 
-const Dialogs = () => {
-    const dialogsData = [
-        { id: 1, name: 'Myr' },
-        { id: 2, name: 'Max' },
-        { id: 3, name: 'Volodya' },
-        { id: 4, name: 'Vodan' },
-    ];
+type DialogItemType = {
+    id: number;
+    name: string;
+};
 
-    const messageData = [
-        { id: 1, message: 'Hi' },
-        { id: 2, message: 'How are you?' },
-        { id: 3, message: 'Nice to meet you, bro!' },
-    ];
+type MessageType = {
+    id: number;
+    message: string;
+};
 
+interface DialogMessageType {
+    dialogsData: DialogItemType[];
+    messageData: MessageType[];
+}
+
+const Dialogs: React.FC<DialogMessageType> = ({ dialogsData, messageData }) => {
     return (
         <div className={s.dialogs}>
             <DialogsItem dialogs={dialogsData} />
