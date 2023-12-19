@@ -3,7 +3,7 @@ import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './MyPosts/ProfileInfo/ProfileInfo';
 import s from './Profile.module.css'
 
-// Додайте імпорт типу PostType
+
 type PostType = {
     id: number;
     post: string;
